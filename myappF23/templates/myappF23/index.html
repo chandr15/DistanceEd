@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Categories</title>
+</head>
+<body>
+    <h1>Course Categories</h1>
+
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Courses</h2>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.title }} - {{ course.description }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Students</h2>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.first_name }} {{ student.last_name }} - {{ student.status }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Instructors</h2>
+    <ul>
+        {% for instructor in instructors %}
+            <li>{{ instructor.first_name }} {{ instructor.last_name }} - {{ instructor.bio }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Orders</h2>
+    <ul>
+        {% for order in orders %}
+            <li>Order for {{ order.course.title }} by {{ order.student.first_name }} {{ order.student.last_name }} - Order Status: {{ order.get_order_status_display }} - Order Date: {{ order.order_date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

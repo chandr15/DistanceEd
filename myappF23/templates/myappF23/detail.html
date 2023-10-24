@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category Detail</title>
+</head>
+<body>
+    <h1>Category: {{ category.name }}</h1>
+
+    <h2>Courses in this Category</h2>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.title }} - {{ course.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
